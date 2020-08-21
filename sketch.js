@@ -25,11 +25,11 @@ bobDiameter=40
 
 roofObject=new Roof(220,290,200,20);
 
-bobObject1=new Ball(240,220,bobDiameter);
-bobObject2=new Ball(240,210,bobDiameter);
-bobObject3=new Ball(240,210,bobDiameter);
-bobObject4=new Ball(240,210,bobDiameter);
-bobObject5=new Ball(240,210,bobDiameter);
+bobObject1=new Ball(720,720,bobDiameter);
+bobObject2=new Ball(760,760,bobDiameter);
+bobObject3=new Ball(800,800,bobDiameter);
+bobObject4=new Ball(840,840,bobDiameter);
+bobObject5=new Ball(880,880,bobDiameter);
 
 rope1=new Rope(bobObject1.body,roofObject.body,bobDiameter*2,0);
 rope2=new Rope(bobObject2.body,roofObject.body,bobDiameter*2,0);
@@ -67,6 +67,12 @@ function draw() {
   rope4.display();
   rope5.display();
 
+}
+
+function keyPressed(){
+  if (keyCode === UP_ARROW){
+      Matter.Body.applyForce(bobObject4.body,bobObject4.body.position,{x:85,y:-85});
+  }
 }
 
 
